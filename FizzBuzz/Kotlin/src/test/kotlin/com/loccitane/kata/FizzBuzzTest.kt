@@ -17,4 +17,8 @@ class FizzBuzzTest {
     fun `Should return fizz if multiple of 5`() {
         assertThat(FizzBuzz().run(10)).isEqualTo("Buzz")
     }
+    @Test
+    fun `Should return FizzBuzz if multiple of 5 and 3`() {
+        assertThat(FizzBuzz().run(15)).isEqualTo("FizzBuzz")
+    }
 }
