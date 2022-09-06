@@ -1,4 +1,4 @@
-package com.loccitane.kata
+package com.kata.fizzbuzz
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

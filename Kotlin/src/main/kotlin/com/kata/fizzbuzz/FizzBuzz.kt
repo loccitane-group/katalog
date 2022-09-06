@@ -1,4 +1,4 @@
-package com.loccitane.kata
+package com.kata.fizzbuzz
 
 class FizzBuzz {
     fun run(number: Int): String {
