@@ -8,24 +8,17 @@
  */
 
 plugins {
-    // Apply the groovy Plugin to add support for Groovy.
     id 'groovy'
-
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
-    // Use the latest Groovy version for building this library
-    implementation 'org.codehaus.groovy:groovy-all:3.0.10'
-
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation 'org.codehaus.groovy:groovy-all:3.0.12'
+    implementation 'com.google.guava:guava:31.1-jre'
 }
 
 testing {
@@ -36,9 +29,4 @@ testing {
             useSpock('2.1-groovy-3.0')
         }
     }
-}
-
-application {
-    // Define the main class for the application.
-    mainClass = 'groovy.App'
 }
