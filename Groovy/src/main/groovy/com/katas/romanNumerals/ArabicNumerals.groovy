@@ -6,6 +6,7 @@ class ArabicNumerals {
         (1..myNumber)
                 .collect { "I" }
                 .join()
+                .replaceAll("I{500}", "D")
                 .replaceAll("I{400}", "CD")
                 .replaceAll("I{100}", "C")
                 .replaceAll("I{90}", "XC")
