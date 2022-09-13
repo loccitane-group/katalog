@@ -16,11 +16,11 @@ class ArabicNumerals {
      * @param log10 >=0
      * @return
      */
-    String getRomanChunk(Integer n, Integer log10){
+    String getRomanChunk(Integer n, Integer log10) {
         def bit1 = romanBits[log10][0]       // if log10 == 0 => I, if log10 == 1 => X
         def bit5 = romanBits[log10][1]       //               => V                => L
-        def bit10 = romanBits[log10+1][0]    //               => X                => C
-        switch(n) {
+        def bit10 = romanBits[log10 + 1][0]    //               => X                => C
+        switch (n) {
             case 0..3:
                 bit1 * n
                 break
@@ -28,7 +28,7 @@ class ArabicNumerals {
                 "${bit1}${bit5}"
                 break
             case 5..8:
-                "${bit5}${bit1*(n-5)}"
+                "${bit5}${bit1 * (n - 5)}"
                 break
             case 9:
                 "${bit1}${bit10}"
@@ -41,14 +41,15 @@ class ArabicNumerals {
      * @param log10 starts with 0, and increment each time we go to the next power of 10
      * @return
      */
-    private String getRomanHandler(Integer remain, Integer log10){
-        if (remain == 0){
+    private String getRomanHandler(Integer remain, Integer log10) {
+        if (remain == 0) {
             return ''
         }
         def digit = remain % 10
-        Integer next = remain /10
-        return getRomanHandler(next, log10+1)+getRomanChunk(digit, log10)
+        Integer next = remain / 10
+        return getRomanHandler(next, log10 + 1) + getRomanChunk(digit, log10)
     }
+
     def getRoman(def myNumber) {
         getRomanHandler(myNumber, 0)
     }
