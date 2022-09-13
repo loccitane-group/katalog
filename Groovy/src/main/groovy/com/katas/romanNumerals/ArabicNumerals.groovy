@@ -6,5 +6,6 @@ class ArabicNumerals {
        (1..myNumber)
                .collect{"I"}
                .join()
+       .replaceAll("I{4}", "IV")
     }
 }
