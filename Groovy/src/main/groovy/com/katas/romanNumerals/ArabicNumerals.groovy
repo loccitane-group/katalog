@@ -17,9 +17,9 @@ class ArabicNumerals {
      * @return
      */
     String getRomanChunk(Integer n, Integer log10){
-        def bit1 = romanBits[log10][0]
-        def bit5 = romanBits[log10][1]
-        def bit10 = romanBits[log10+1][0]
+        def bit1 = romanBits[log10][0]       // if log10 == 0 => I, if log10 == 1 => X
+        def bit5 = romanBits[log10][1]       //               => V                => L
+        def bit10 = romanBits[log10+1][0]    //               => X                => C
         switch(n) {
             case 0..3:
                 bit1 * n
