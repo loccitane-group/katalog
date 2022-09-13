@@ -10,6 +10,7 @@
 plugins {
     id 'groovy'
     id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.20-RC'
 }
 
 repositories {
@@ -19,6 +20,7 @@ repositories {
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.12'
     implementation 'com.google.guava:guava:31.1-jre'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 testing {
@@ -28,5 +30,15 @@ testing {
             // Use Spock test framework
             useSpock('2.1-groovy-3.0')
         }
+    }
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
