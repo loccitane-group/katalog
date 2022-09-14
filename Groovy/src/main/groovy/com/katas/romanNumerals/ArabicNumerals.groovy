@@ -17,15 +17,16 @@ class ArabicNumerals {
             [1, "I"]
     ]
 
+    String getRomanHandler(Integer remain, String acc) {
+        if (remain == 0) {
+            return acc
+        }
+
+        def rep = n2romanChunk.find({ it[0] <= remain })
+        return getRomanHandler(remain - rep[0], acc + rep[1])
+    }
 
     def getRoman(def myNumber) {
-        String acc = ""
-        Integer remain = myNumber
-        while (remain > 0) {
-            def rep = n2romanChunk.find({ it[0] <= remain })
-            acc += rep[1]
-            remain -= rep[0]
-        }
-        return acc
+        return getRomanHandler(myNumber, '')
     }
 }
