@@ -1,7 +1,12 @@
 package com.katas.romanNumerals
 
 class ArabicNumerals {
-    def n2romanChunk = [
+
+    def getRoman(def myNumber) {
+        return getRomanHandler(myNumber, '')
+    }
+
+    private def n2romanChunk = [
             [1000, "M"],
             [900, "CM"],
             [500, "D"],
@@ -17,7 +22,13 @@ class ArabicNumerals {
             [1, "I"]
     ]
 
-    String getRomanHandler(Integer remain, String acc) {
+    /**
+     * the recursive handler function
+     * @param remain decremented by the value we could add to the returned string
+     * @param acc string accumulator
+     * @return
+     */
+    private String getRomanHandler(Integer remain, String acc) {
         if (remain == 0) {
             return acc
         }
@@ -26,7 +37,4 @@ class ArabicNumerals {
         return getRomanHandler(remain - rep[0], acc + rep[1])
     }
 
-    def getRoman(def myNumber) {
-        return getRomanHandler(myNumber, '')
-    }
 }
