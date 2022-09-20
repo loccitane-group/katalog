@@ -43,7 +43,6 @@ class HammingSpec extends Specification {
         'GGACTGAAATCTG' | 'GGACTGAAATCTG' || 0
     }
 
-    @Ignore
     def "Long different strands"() {
         expect:
         hamming.distance(strand1, strand2) == expected
