@@ -41,7 +41,7 @@ class Hamming {
         }
 
         // Personal thought: I'm a bit confused by first/second and now left/right strand ...
-        if (disallowLeftEmptyStrand(strand1)) {
+        if (disallowLeftEmptyStrand(strand1, strand2)) {
             throw new ArithmeticException("Left strand should not be empty bro!")
         }
     }
@@ -70,8 +70,8 @@ class Hamming {
         return strand1.length() < strand2.length()
     }
 
-    boolean disallowLeftEmptyStrand(strand1) {
-        return strand1 == ''
+    boolean disallowLeftEmptyStrand(strand1, strand2) {
+        return strand1 == '' && strand2.length() > 0
     }
 
     boolean areEmptyStrands(strand1, strand2) {

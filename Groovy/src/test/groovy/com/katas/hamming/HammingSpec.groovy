@@ -58,20 +58,21 @@ class HammingSpec extends Specification {
         hamming.distance(strand1, strand2)
 
         then:
-        thrown(ArithmeticException)
+        def e = thrown(ArithmeticException)
+        e.message == "First strand should not be longer than second strand!"
 
         where:
         strand1 | strand2
         'AATG'  | 'AAA'
     }
 
-    @Ignore
     def "Disallow second strand longer"() {
         when:
         hamming.distance(strand1, strand2)
 
         then:
-        thrown(ArithmeticException)
+        def e = thrown(ArithmeticException)
+        e.message == "Second strand should not be longer than first strand!"
 
         where:
         strand1 | strand2
@@ -83,20 +84,21 @@ class HammingSpec extends Specification {
         hamming.distance(strand1, strand2)
 
         then:
-        thrown(ArithmeticException)
+        def e = thrown(ArithmeticException)
+        e.message == "Left strand should not be empty bro!"
 
         where:
         strand1 | strand2
         ''      | 'G'
     }
 
-    @Ignore
     def "Disallow right empty strand"() {
         when:
         hamming.distance(strand1, strand2)
 
         then:
-        thrown(ArithmeticException)
+        def e = thrown(ArithmeticException)
+        e.message == "First strand should not be empty bro!"
 
         where:
         strand1 | strand2
