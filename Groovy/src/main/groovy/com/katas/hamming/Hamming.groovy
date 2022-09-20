@@ -1,5 +1,16 @@
 package com.katas.hamming
 
+/*
+    Next step proposition:
+    - I would move String strands into Object so that strand can tell me if they are empty or not
+    Strand can also compare with other strand and give me a Distance (a business object also)
+
+    - Have custom exception with more business focused names
+
+    - Make more clearer the definition
+    (e.g., when we want to disallow one strand be longer than the other one, are we expecting that the other strand is not empty?)
+ */
+
 class Hamming {
     int NO_DIFFERENCE_HAMMING = 0
     int SINGLE_DIFFERENCE_HAMMING = 1
