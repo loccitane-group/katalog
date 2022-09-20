@@ -39,7 +39,11 @@ class Hamming {
         if (disallowSecondStrandLonger(strand1, strands2)) {
             throw new ArithmeticException("Second strand should not be longer than first strand!")
         }
-        
+
+        // Personal thought: I'm a bit confused by first/second and now left/right strand ...
+        if (disallowLeftEmptyStrand(strand1, strands2)) {
+            throw new ArithmeticException("Left strand should not be empty bro!")
+        }
     }
 
     boolean areSingleLetterIdenticalStrands(strand1, strands2) {
@@ -64,6 +68,10 @@ class Hamming {
 
     boolean disallowSecondStrandLonger(strand1, strands2) {
         return strand1.length() < strands2.length()
+    }
+
+    boolean disallowLeftEmptyStrand(strand1, strand2) {
+        return strand1 == ''
     }
 
     boolean areEmptyStrands(strand1, strands2) {

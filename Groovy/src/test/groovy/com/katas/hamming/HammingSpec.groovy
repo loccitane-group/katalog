@@ -78,7 +78,6 @@ class HammingSpec extends Specification {
         'ATA'   | 'AGTG'
     }
 
-    @Ignore
     def "Disallow left empty strand"() {
         when:
         hamming.distance(strand1, strand2)
