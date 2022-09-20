@@ -5,20 +5,20 @@ class Hamming {
     int SINGLE_DIFFERENCE_HAMMING = 1
     int LONG_DIFFERENCE_HAMMING = 9
 
-    int distance(strand1, strands2) {
-        if (areEmptyStrands(strand1, strands2)) {
+    int distance(strand1, strand2) {
+        if (areEmptyStrands(strand1, strand2)) {
             return NO_DIFFERENCE_HAMMING
         }
-        if (areSingleLetterIdenticalStrands(strand1, strands2)) {
+        if (areSingleLetterIdenticalStrands(strand1, strand2)) {
             return NO_DIFFERENCE_HAMMING
         }
-        if (areSingleLetterDifferentStrands(strand1, strands2)) {
+        if (areSingleLetterDifferentStrands(strand1, strand2)) {
             return SINGLE_DIFFERENCE_HAMMING
         }
-        if (areLongIdenticalStrands(strand1, strands2)) {
+        if (areLongIdenticalStrands(strand1, strand2)) {
             return NO_DIFFERENCE_HAMMING
         }
-        if (areLongDifferentStrands(strand1, strands2)) {
+        if (areLongDifferentStrands(strand1, strand2)) {
             /*
                 Disclaimer: I'm returning here a static number of 9
                 because the test asks to return 9 for two long different strands
@@ -32,11 +32,11 @@ class Hamming {
             return LONG_DIFFERENCE_HAMMING
         }
 
-        if (disallowFirstStrandLonger(strand1, strands2)) {
+        if (disallowFirstStrandLonger(strand1, strand2)) {
             throw new ArithmeticException("First strand should not be longer than second strand!")
         }
 
-        if (disallowSecondStrandLonger(strand1, strands2)) {
+        if (disallowSecondStrandLonger(strand1, strand2)) {
             throw new ArithmeticException("Second strand should not be longer than first strand!")
         }
 
@@ -46,56 +46,56 @@ class Hamming {
         }
     }
 
-    boolean areSingleLetterIdenticalStrands(strand1, strands2) {
-        return areSingleLetterStrands(strand1, strands2) && areSameSizeStrands(strand1, strands2) && areIdenticalStrands(strand1, strands2)
+    boolean areSingleLetterIdenticalStrands(strand1, strand2) {
+        return areSingleLetterStrands(strand1, strand2) && areSameSizeStrands(strand1, strand2) && areIdenticalStrands(strand1, strand2)
     }
 
-    boolean areSingleLetterDifferentStrands(strand1, strands2) {
-        return areSingleLetterStrands(strand1, strands2) && areSameSizeStrands(strand1, strands2) && areDifferentStrands(strand1, strands2)
+    boolean areSingleLetterDifferentStrands(strand1, strand2) {
+        return areSingleLetterStrands(strand1, strand2) && areSameSizeStrands(strand1, strand2) && areDifferentStrands(strand1, strand2)
     }
 
-    boolean areLongIdenticalStrands(strand1, strands2) {
-        return areLongStrands(strand1, strands2) && areSameSizeStrands(strand1, strands2) && areIdenticalStrands(strand1, strands2)
+    boolean areLongIdenticalStrands(strand1, strand2) {
+        return areLongStrands(strand1, strand2) && areSameSizeStrands(strand1, strand2) && areIdenticalStrands(strand1, strand2)
     }
 
-    boolean areLongDifferentStrands(strand1, strands2) {
-        return areLongStrands(strand1, strands2) && areSameSizeStrands(strand1, strands2) && areDifferentStrands(strand1, strands2)
+    boolean areLongDifferentStrands(strand1, strand2) {
+        return areLongStrands(strand1, strand2) && areSameSizeStrands(strand1, strand2) && areDifferentStrands(strand1, strand2)
     }
 
-    boolean disallowFirstStrandLonger(strand1, strands2) {
-        return strand1.length() > strands2.length()
+    boolean disallowFirstStrandLonger(strand1, strand2) {
+        return strand1.length() > strand2.length()
     }
 
-    boolean disallowSecondStrandLonger(strand1, strands2) {
-        return strand1.length() < strands2.length()
+    boolean disallowSecondStrandLonger(strand1, strand2) {
+        return strand1.length() < strand2.length()
     }
 
     boolean disallowLeftEmptyStrand(strand1) {
         return strand1 == ''
     }
 
-    boolean areEmptyStrands(strand1, strands2) {
-        return strand1 == '' && strands2 == ''
+    boolean areEmptyStrands(strand1, strand2) {
+        return strand1 == '' && strand2 == ''
     }
 
-    boolean areSameSizeStrands(strand1, strands2) {
-        return strand1.length() == strands2.length()
+    boolean areSameSizeStrands(strand1, strand2) {
+        return strand1.length() == strand2.length()
     }
 
-    boolean areSingleLetterStrands(strand1, strands2) {
+    boolean areSingleLetterStrands(strand1, strand2) {
         return strand1.length() == 1
-                && strands2.length() == 1
+                && strand2.length() == 1
     }
 
-    boolean areIdenticalStrands(strand1, strands2) {
-        return strand1 == strands2
+    boolean areIdenticalStrands(strand1, strand2) {
+        return strand1 == strand2
     }
 
-    boolean areDifferentStrands(strand1, strands2) {
-        return !areIdenticalStrands(strand1, strands2)
+    boolean areDifferentStrands(strand1, strand2) {
+        return !areIdenticalStrands(strand1, strand2)
     }
 
-    boolean areLongStrands(strand1, strands2) {
-        return strand1.length() > 1 && strands2.length() > 1
+    boolean areLongStrands(strand1, strand2) {
+        return strand1.length() > 1 && strand2.length() > 1
     }
 }
