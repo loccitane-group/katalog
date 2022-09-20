@@ -1,3 +1,4 @@
+import com.katas.hamming.Hamming
 import spock.lang.*
 
 class HammingSpec extends Specification {
@@ -14,7 +15,6 @@ class HammingSpec extends Specification {
         ''      | ''      || 0
     }
 
-    @Ignore
     def "Single letter identical strands"() {
         expect:
         hamming.distance(strand1, strand2) == expected
