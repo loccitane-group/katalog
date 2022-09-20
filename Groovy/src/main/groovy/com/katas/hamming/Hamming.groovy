@@ -31,26 +31,38 @@ class Hamming {
              */
             return LONG_DIFFERENCE_HAMMING
         }
+
+        if (disallowFirstStrandLonger(s1, s2)) {
+            throw new ArithmeticException("First strand should not be longer than second strand!")
+        }
     }
 
     boolean areSingleLetterIdenticalStrands(s1, s2) {
-        return areSingleLetterStrands(s1, s2) && areIdenticalStrands(s1, s2)
+        return areSingleLetterStrands(s1, s2) && areSameSizeStrands(s1, s2) && areIdenticalStrands(s1, s2)
     }
 
     boolean areSingleLetterDifferentStrands(s1, s2) {
-        return areSingleLetterStrands(s1, s2) && areDifferentStrands(s1, s2)
+        return areSingleLetterStrands(s1, s2) && areSameSizeStrands(s1, s2) && areDifferentStrands(s1, s2)
     }
 
     boolean areLongIdenticalStrands(s1, s2) {
-        return areLongStrands(s1, s2) && areIdenticalStrands(s1, s2)
+        return areLongStrands(s1, s2) && areSameSizeStrands(s1, s2) && areIdenticalStrands(s1, s2)
     }
 
     boolean areLongDifferentStrands(s1, s2) {
-        return areLongStrands(s1, s2) && areDifferentStrands(s1, s2)
+        return areLongStrands(s1, s2) && areSameSizeStrands(s1, s2) && areDifferentStrands(s1, s2)
+    }
+
+    boolean disallowFirstStrandLonger(String s1, String s2) {
+        return s1.length() > s2.length()
     }
 
     boolean areEmptyStrands(String s1, String s2) {
         return s1 == '' && s2 == ''
+    }
+
+    boolean areSameSizeStrands(String s1, String s2) {
+        return s1.length() == s2.length()
     }
 
     boolean areSingleLetterStrands(String s1, String s2) {
