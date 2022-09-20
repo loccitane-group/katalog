@@ -24,7 +24,6 @@ class HammingSpec extends Specification {
         'A'     | 'A'     || 0
     }
 
-    @Ignore
     def "Single letter different strands"() {
         expect:
         hamming.distance(strand1, strand2) == expected
