@@ -35,6 +35,11 @@ class Hamming {
         if (disallowFirstStrandLonger(strand1, strands2)) {
             throw new ArithmeticException("First strand should not be longer than second strand!")
         }
+
+        if (disallowSecondStrandLonger(strand1, strands2)) {
+            throw new ArithmeticException("Second strand should not be longer than first strand!")
+        }
+        
     }
 
     boolean areSingleLetterIdenticalStrands(strand1, strands2) {
@@ -55,6 +60,10 @@ class Hamming {
 
     boolean disallowFirstStrandLonger(strand1, strands2) {
         return strand1.length() > strands2.length()
+    }
+
+    boolean disallowSecondStrandLonger(strand1, strands2) {
+        return strand1.length() < strands2.length()
     }
 
     boolean areEmptyStrands(strand1, strands2) {
