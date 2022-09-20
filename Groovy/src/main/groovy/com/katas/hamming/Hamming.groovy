@@ -8,17 +8,27 @@ class Hamming {
         if (areEmptyStrands(s1, s2)) {
             return NO_DIFFERENCE_HAMMING
         }
-        if (areSingleLetterStrands(s1, s2)
-                && areIdenticalStrands(s1, s2)) {
+        if (areSingleLetterIdenticalStrands(s1, s2)) {
             return NO_DIFFERENCE_HAMMING
         }
-        if (areSingleLetterStrands(s1, s2)
-                && areDifferentStrands(s1, s2)) {
+        if (areSingleLetterDifferentStrands(s1, s2)) {
             return SINGLE_DIFFERENCE_HAMMING
         }
-        if (s1.length() > 1 && s2.length() > 1 && s1 == s2) {
+        if (areLongIdenticalStrands(s1, s2)) {
             return NO_DIFFERENCE_HAMMING
         }
+    }
+
+    boolean areSingleLetterIdenticalStrands(s1, s2) {
+        return areSingleLetterStrands(s1, s2) && areIdenticalStrands(s1, s2)
+    }
+
+    boolean areSingleLetterDifferentStrands(s1, s2) {
+        return areSingleLetterStrands(s1, s2) && areDifferentStrands(s1, s2)
+    }
+
+    boolean areLongIdenticalStrands(s1, s2) {
+        return areLongStrands(s1, s2) && areIdenticalStrands(s1, s2)
     }
 
     boolean areEmptyStrands(String s1, String s2) {
@@ -38,7 +48,7 @@ class Hamming {
         return !areIdenticalStrands(s1, s2)
     }
 
-    boolean areLongIdenticalStrands(String s1, String s2) {
-        return s1.length() > 1 && s2.length() > 1 && s1 == s2
+    boolean areLongStrands(String s1, String s2) {
+        return s1.length() > 1 && s2.length() > 1
     }
 }
