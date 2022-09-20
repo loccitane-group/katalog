@@ -98,7 +98,7 @@ class HammingSpec extends Specification {
 
         then:
         def e = thrown(ArithmeticException)
-        e.message == "First strand should not be empty bro!"
+        e.message == "Right strand should not be empty bro!"
 
         where:
         strand1 | strand2

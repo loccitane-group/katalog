@@ -44,6 +44,10 @@ class Hamming {
         if (disallowLeftEmptyStrand(strand1, strand2)) {
             throw new ArithmeticException("Left strand should not be empty bro!")
         }
+
+        if (disallowRightEmptyStrand(strand1, strand2)) {
+            throw new ArithmeticException("Right strand should not be empty bro!")
+        }
     }
 
     boolean areSingleLetterIdenticalStrands(strand1, strand2) {
@@ -74,6 +78,10 @@ class Hamming {
 
     boolean disallowLeftEmptyStrand(strand1, strand2) {
         return strand1 == '' && strand2.length() > 0
+    }
+
+    boolean disallowRightEmptyStrand(strand1, strand2) {
+        return strand1.length() > 0 && strand2 == ''
     }
 
     boolean areEmptyStrands(strand1, strand2) {
