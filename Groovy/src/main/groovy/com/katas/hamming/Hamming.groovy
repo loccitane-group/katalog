@@ -14,6 +14,9 @@ class Hamming {
         if (areDifferentSingleLetterStrands(s1, s2)) {
             return SINGLE_DIFFERENCE_HAMMING
         }
+        if (s1.length() > 1 && s2.length() > 1 && s1 == s2) {
+            return NO_DIFFERENCE_HAMMING
+        }
     }
 
     boolean areEmptyStrands(String s1, String s2) {
