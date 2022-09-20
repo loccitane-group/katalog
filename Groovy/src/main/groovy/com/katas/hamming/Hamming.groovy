@@ -63,11 +63,13 @@ class Hamming {
     }
 
     boolean disallowFirstStrandLonger(strand1, strand2) {
-        return strand1.length() > strand2.length()
+        return areNotEmptyStrands(strand1, strand2)
+                && strand1.length() > strand2.length()
     }
 
     boolean disallowSecondStrandLonger(strand1, strand2) {
-        return strand1.length() < strand2.length()
+        return areNotEmptyStrands(strand1, strand2)
+                && strand1.length() < strand2.length()
     }
 
     boolean disallowLeftEmptyStrand(strand1, strand2) {
@@ -76,6 +78,10 @@ class Hamming {
 
     boolean areEmptyStrands(strand1, strand2) {
         return strand1 == '' && strand2 == ''
+    }
+
+    boolean areNotEmptyStrands(strand1, strand2) {
+        return strand1 != '' && strand2 != ''
     }
 
     boolean areSameSizeStrands(strand1, strand2) {
