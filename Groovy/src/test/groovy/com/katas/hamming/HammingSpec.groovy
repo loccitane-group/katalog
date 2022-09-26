@@ -54,7 +54,6 @@ class HammingSpec extends Specification {
         'GGACGGATTCTG' | 'AGGACGGATTCT' || 9
     }
 
-    @Ignore
     def "Disallow first strand longer"() {
         when:
         hamming.distance(strand1, strand2)
@@ -67,7 +66,6 @@ class HammingSpec extends Specification {
         'AATG'  | 'AAA'
     }
 
-    @Ignore
     def "Disallow second strand longer"() {
         when:
         hamming.distance(strand1, strand2)
@@ -80,7 +78,6 @@ class HammingSpec extends Specification {
         'ATA'   | 'AGTG'
     }
 
-    @Ignore
     def "Disallow left empty strand"() {
         when:
         hamming.distance(strand1, strand2)
@@ -93,7 +90,6 @@ class HammingSpec extends Specification {
         ''      | 'G'
     }
 
-    @Ignore
     def "Disallow right empty strand"() {
         when:
         hamming.distance(strand1, strand2)
