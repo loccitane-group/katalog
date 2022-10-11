@@ -4,11 +4,15 @@ class CaesarCipher {
 
     String input
 
-    CaesarCipher(String input){
+    CaesarCipher(String input) {
         this.input = input
     }
 
-    def compute(Integer shift){
-        this.input.toCharArray()[0] + shift
+    def compute(Integer shift) {
+        def c = this.input.toCharArray()[0]
+        if (Character.isLetter(c))
+            c + shift
+        else
+            c
     }
 }
