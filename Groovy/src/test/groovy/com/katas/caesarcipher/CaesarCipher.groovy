@@ -11,7 +11,7 @@ class CaesarCipher {
     def compute(Integer shift) {
         def c = this.input.toCharArray()[0]
         if (Character.isLetter(c))
-            c + shift
+            ((c + shift) - 65) % 26 + 65
         else
             c
     }

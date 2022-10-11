@@ -1,6 +1,6 @@
 package com.katas.caesarcipher
 
-import spock.lang.Shared
+
 import spock.lang.Specification
 
 class CaesarCipherSpec extends Specification {
@@ -19,5 +19,6 @@ class CaesarCipherSpec extends Specification {
         input | shift || expected
         "A"   | 1     || "B"
         "1"   | 1     || "1"
+        "Z"   | 1     || "A"
     }
 }
