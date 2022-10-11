@@ -9,9 +9,13 @@ class CaesarCipher {
     }
 
     def compute(Integer shift) {
+        def temp=shift%26
+        if(temp<0){
+            temp=temp+26
+        }
         def c = this.input.toCharArray()[0]
         if (Character.isLetter(c))
-            ((c + shift) - 65) % 26 + 65
+            ((c.toUpperCase() + temp) - 65) % 26 + 65
         else
             c
     }
