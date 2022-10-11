@@ -17,3 +17,4 @@ Exemple:
 - Charset non garanti
 - Le décalage est un paramètre de la méthode de chiffrement
 - input.uppercase() = cipher(cipher(input,1)-1) 
+- la méthode qui lance le chiffrement s'appelle "compute"
