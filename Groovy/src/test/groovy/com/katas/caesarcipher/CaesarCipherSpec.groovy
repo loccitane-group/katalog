@@ -25,5 +25,8 @@ class CaesarCipherSpec extends Specification {
         "A"   | -1     || "Z"
         "A"   | 27     || "B"
         "A"   | -53     || "Z"
+        "AT"  | 1    || "BU"
+        "AT8"  | 1    || "BU8"
+        "FF90E16AAËBACA093543299F8F26FCF1"  | 1 | "GG90F16BBËCBDB093543299G8G26GDG1"
     }
 }
