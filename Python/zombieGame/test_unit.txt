@@ -1,0 +1,60 @@
+def canBeSaved (x,y,human_count,zombie_count):
+    zombieMove=400
+    ashMove=1000
+    return True    
+
+#Ash & Zombie are on the same cell
+x=0
+y=0
+human_x=8000
+human_y=4600
+zombie_x=0
+zombie_y=0
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==True
+
+#Human & Zombie are on the same cell
+x=0
+y=0
+human_x=8000
+human_y=4600
+zombie_x=8000
+zombie_y=4600
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==False
+
+#Human & Ash are on the same cell
+x=1000
+y=1000
+human_x=1000
+human_y=1000
+zombie_x=8000
+zombie_y=5000
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==True
+
+#Human is closer to Ash than Zombie
+x=5000
+y=1000
+human_x=5000
+human_y=0000
+zombie_x=5000
+zombie_y=3000
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==True
+
+#Human is closer to Zombie than Ash
+x=5000
+y=8000
+human_x=5000
+human_y=0000
+zombie_x=5000
+zombie_y=1000
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==False
+
+#Human is at the same distance (same moving round to reach the human) from Zombie than Ash
+x=5000
+y=1000
+human_x=5000
+human_y=3000
+zombie_x=5000
+zombie_y=3800
+canBeSaved(x,y,human_x,human_y,zombie_x,zombie_y)==True
+
+#In case we have a table of zombie (more than one) we will perform those test for each zombie (a human can be saved if and only if he's safe from all zombies)
