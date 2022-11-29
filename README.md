@@ -19,10 +19,10 @@ Further topics could include: advanced development (algorithmics, threading & co
 - Fizz Buzz (groovy, kotlin) #novice #tdd 
  
 # Session history
-1 20/09/2022 - Hamming distance (groovy)
-1 13/09/2022 - Roman Numerals (groovy) #1
-1 01/09/2022 - Fizz Buzz (kotlin) 
-1 25/08/2022 - Fizz Buzz (python) 
+- 4 20/09/2022 - Hamming distance (groovy)
+- 3 13/09/2022 - Roman Numerals (groovy) #1
+- 2 01/09/2022 - Fizz Buzz (kotlin) 
+- 1 25/08/2022 - Fizz Buzz (python) 
 
  
 # Kata descriptions : 
