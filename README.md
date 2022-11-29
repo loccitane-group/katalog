@@ -1,6 +1,6 @@
 # katalog
 
-This repository serves to commit the result of code katas and share implementation examples. You may find code in several programming languages used at L'Occitane (ex: javascript, java, kotlin, groovy, c#, python). 
+This repository serves to commit the result of code katas and share implementation examples. 
 
  
 # Goal 
