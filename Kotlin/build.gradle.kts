@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.7.10"
+    kotlin("jvm") version "1.7.22"
     java
 }
 
@@ -8,9 +8,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10")
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.22")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.22")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
     testImplementation("org.assertj:assertj-core:3.23.1")
 }
 
