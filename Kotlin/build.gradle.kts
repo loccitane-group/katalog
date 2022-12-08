@@ -12,6 +12,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.22")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
     testImplementation("org.assertj:assertj-core:3.23.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
