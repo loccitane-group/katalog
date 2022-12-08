@@ -1,4 +1,4 @@
-package com.kata.adv22
+package com.kata.adv22.days.one
 
 class AdvDayOne(text: String) {
     private val elfesCalories = text.split("\n\n").map { elfe -> elfe.split("\n").sumOf { value -> value.toInt() } }

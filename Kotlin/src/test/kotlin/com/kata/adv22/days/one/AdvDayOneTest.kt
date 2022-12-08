@@ -1,4 +1,4 @@
-package com.kata.adv22
+package com.kata.adv22.days.one
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
