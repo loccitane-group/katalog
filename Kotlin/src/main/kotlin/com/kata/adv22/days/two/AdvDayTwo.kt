@@ -1,30 +1,29 @@
 package com.kata.adv22.days.two
 
-class AdvDayTwo(private val round: List<String>) {
-    fun getRoundScoreOfPlayerTwo(): Int {
+class AdvDayTwo() {
+    fun getRoundScoreOfPlayerTwo(round: List<String>): Int {
         val score: Int
         val winValuePoints = 6
         val drawValuePoints = 3
         val defeatValuePoints = 0
-        val shapeValue = shapes.getValue(round.last())
+        val playerOneShape = shapes.getValue(round.first())
+        val playerTwoShape = shapes.getValue(round.last())
 
-        if (isDraw()) {
-            score = shapeValue + drawValuePoints
-        } else if (playerTwoWins()) {
-            score = shapeValue + winValuePoints
+        if (isDraw(playerOneShape,playerTwoShape)) {
+            score = playerTwoShape + drawValuePoints
+        } else if (playerTwoWins(playerOneShape,playerTwoShape)) {
+            score = playerTwoShape + winValuePoints
         } else {
-            score = shapeValue + defeatValuePoints
+            score = playerTwoShape + defeatValuePoints
         }
         return score
     }
 
-    private fun isDraw(): Boolean {
-        return shapes.getValue(round.first()) == shapes.getValue(round.last())
+    private fun isDraw(playerOneShape: Int, playerTwoShape: Int): Boolean {
+        return playerOneShape == playerTwoShape
     }
 
-    private fun playerTwoWins(): Boolean {
-        val playerOneShape = shapes.getValue(round.first())
-        val playerTwoShape = shapes.getValue(round.last())
+    private fun playerTwoWins(playerOneShape: Int, playerTwoShape: Int): Boolean {
         return when (playerOneShape) {
             1 -> playerTwoShape == 2
             2 -> playerTwoShape == 3

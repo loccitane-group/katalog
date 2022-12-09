@@ -18,7 +18,7 @@ class AdvDayTwoTest {
         listOf("C", "Z") to 6
     ).map { (round, expectedScore) ->
         DynamicTest.dynamicTest("should get score $expectedScore for round $round") {
-            assertEquals(expectedScore, AdvDayTwo(round).getRoundScoreOfPlayerTwo())
+            assertEquals(expectedScore, AdvDayTwo().getRoundScoreOfPlayerTwo(round))
         }
     }
 }
