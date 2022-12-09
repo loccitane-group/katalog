@@ -1,6 +1,14 @@
 package com.kata.adv22.days.two
 
-class AdvDayTwo() {
+import java.io.File
+
+class AdvDayTwo {
+    fun getTotalScoreOfFile(fileName: String): Int {
+        var score = 0
+        File(fileName).forEachLine { score += getRoundScoreOfPlayerTwo(it.split(" ")) }
+        return score
+    }
+
     fun getRoundScoreOfPlayerTwo(round: List<String>): Int {
         val score: Int
         val winValuePoints = 6
@@ -9,9 +17,9 @@ class AdvDayTwo() {
         val playerOneShape = shapes.getValue(round.first())
         val playerTwoShape = shapes.getValue(round.last())
 
-        if (isDraw(playerOneShape,playerTwoShape)) {
+        if (isDraw(playerOneShape, playerTwoShape)) {
             score = playerTwoShape + drawValuePoints
-        } else if (playerTwoWins(playerOneShape,playerTwoShape)) {
+        } else if (playerTwoWins(playerOneShape, playerTwoShape)) {
             score = playerTwoShape + winValuePoints
         } else {
             score = playerTwoShape + defeatValuePoints

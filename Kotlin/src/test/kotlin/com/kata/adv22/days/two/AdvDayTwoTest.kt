@@ -2,6 +2,7 @@ package com.kata.adv22.days.two
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.DynamicTest
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
 
 class AdvDayTwoTest {
@@ -20,5 +21,11 @@ class AdvDayTwoTest {
         DynamicTest.dynamicTest("should get score $expectedScore for round $round") {
             assertEquals(expectedScore, AdvDayTwo().getRoundScoreOfPlayerTwo(round))
         }
+    }
+
+    @Test
+    fun should_return_15_for_example_file() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputTest.txt"
+        assertEquals(15, AdvDayTwo().getTotalScoreOfFile(path))
     }
 }
