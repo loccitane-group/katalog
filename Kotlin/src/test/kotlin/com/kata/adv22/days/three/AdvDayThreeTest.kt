@@ -23,4 +23,10 @@ class AdvDayThreeTest {
         val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/three/inputTest.txt"
         assertEquals(157, AdvDayThree().getTotalPriorityOfFile(path))
     }
+
+    @Test
+    fun should_get_priority_8243_with_day_three_input() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/three/inputDayThree.txt"
+        assertEquals(8243, AdvDayThree().getTotalPriorityOfFile(path))
+    }
 }
