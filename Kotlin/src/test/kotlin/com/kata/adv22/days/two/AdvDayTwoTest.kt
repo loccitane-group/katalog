@@ -28,4 +28,11 @@ class AdvDayTwoTest {
         val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputTest.txt"
         assertEquals(15, AdvDayTwo().getTotalScoreOfFile(path))
     }
+
+
+    @Test
+    fun should_return_15422_for_day_two_file() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputDayTwo.txt"
+        assertEquals(15422, AdvDayTwo().getTotalScoreOfFile(path))
+    }
 }
