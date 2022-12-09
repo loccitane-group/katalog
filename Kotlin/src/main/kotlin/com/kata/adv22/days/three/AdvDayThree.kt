@@ -18,4 +18,12 @@ class AdvDayThree {
 
         return priorities.indexOf(sharedItem) + 1
     }
+
+    fun getGroupBadgeItemPriority(groupRucksackContent: Set<String>): Int {
+        val firstElement = groupRucksackContent.elementAt(0).toList()
+        val groupBadge = groupRucksackContent.fold(firstElement) { intersection: List<Char>, it: String ->
+            intersection.intersect(it.toList()).toList()
+        }[0]
+        return priorities.indexOf(groupBadge) + 1
+    }
 }
