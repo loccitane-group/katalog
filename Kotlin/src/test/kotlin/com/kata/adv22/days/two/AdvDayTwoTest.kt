@@ -35,4 +35,17 @@ class AdvDayTwoTest {
         val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputDayTwo.txt"
         assertEquals(15422, AdvDayTwo().getTotalScoreOfFile(path))
     }
+
+    @Test
+    fun should_return_12_for_example_file_with_new_strat() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputTest.txt"
+        assertEquals(12, AdvDayTwo().getTotalScoreOfFileWithStrat(path))
+    }
+
+
+    @Test
+    fun should_return_15442_for_example_file_with_new_strat() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/two/inputDayTwo.txt"
+        assertEquals(15442, AdvDayTwo().getTotalScoreOfFileWithStrat(path))
+    }
 }
