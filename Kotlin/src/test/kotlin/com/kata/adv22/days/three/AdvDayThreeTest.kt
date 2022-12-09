@@ -2,6 +2,7 @@ package com.kata.adv22.days.three
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.DynamicTest
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
 
 class AdvDayThreeTest {
@@ -15,5 +16,11 @@ class AdvDayThreeTest {
         DynamicTest.dynamicTest("should get priority $expectedPriority for rucksackContent $rucksackContent") {
             assertEquals(expectedPriority, AdvDayThree().getSharedItemPriority(rucksackContent))
         }
+    }
+
+    @Test
+    fun should_get_priority_157_with_example_file() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/three/inputTest.txt"
+        assertEquals(157, AdvDayThree().getTotalPriorityOfFile(path))
     }
 }
