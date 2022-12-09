@@ -30,20 +30,21 @@ class AdvDayThreeTest {
         assertEquals(8243, AdvDayThree().getTotalPriorityOfFile(path))
     }
 
-    @Test
-    fun should_get_priority_of_group_badge_item() {
-        val firstGroupRucksackContent = setOf(
+    @TestFactory
+    fun should_get_priority_of_group_badge_item() = listOf(
+        setOf(
             "vJrwpWtwJgWrhcsFMMfFFhFp",
             "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
             "PmmdzqPrVvPwwTWBwg"
-        )
-
-        val secondGroupRucksackContent = setOf(
+        ) to 18,
+        setOf(
             "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
             "ttgJtRGJQctTZtZT",
             "CrZsJsPPZsGzwwsLwLmpwMDw"
-        )
-        assertEquals(18, AdvDayThree().getGroupBadgeItemPriority(firstGroupRucksackContent))
-        assertEquals(52, AdvDayThree().getGroupBadgeItemPriority(secondGroupRucksackContent))
+        ) to 52,
+    ).map { (rucksackContentOfGroup, expectedPriority) ->
+        DynamicTest.dynamicTest("should get priority $expectedPriority for rucksackContent $rucksackContentOfGroup") {
+            assertEquals(expectedPriority, AdvDayThree().getGroupBadgeItemPriority(rucksackContentOfGroup))
+        }
     }
 }
