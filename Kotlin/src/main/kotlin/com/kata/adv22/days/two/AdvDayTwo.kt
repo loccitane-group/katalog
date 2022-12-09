@@ -1,14 +1,18 @@
 package com.kata.adv22.days.two
 
-class AdvDayTwo(val round: List<String>) {
+class AdvDayTwo(private val round: List<String>) {
     fun getRoundScoreOfPlayerTwo(): Int {
-        var score = 1
+        val score: Int
+        val winValuePoints = 6
         val drawValuePoints = 3
         val defeatValuePoints = 0
         val shapeValue = shapes.getValue(round.last())
+
         if (isDraw()) {
             score = shapeValue + drawValuePoints
-        } else if (playerOneWins()) {
+        } else if (playerTwoWins()) {
+            score = shapeValue + winValuePoints
+        } else {
             score = shapeValue + defeatValuePoints
         }
         return score
@@ -18,13 +22,13 @@ class AdvDayTwo(val round: List<String>) {
         return shapes.getValue(round.first()) == shapes.getValue(round.last())
     }
 
-    private fun playerOneWins(): Boolean {
+    private fun playerTwoWins(): Boolean {
         val playerOneShape = shapes.getValue(round.first())
         val playerTwoShape = shapes.getValue(round.last())
         return when (playerOneShape) {
-            1 -> playerTwoShape == 3
-            2 -> playerTwoShape == 1
-            else -> playerTwoShape == 2
+            1 -> playerTwoShape == 2
+            2 -> playerTwoShape == 3
+            else -> playerTwoShape == 1
         }
     }
 }
