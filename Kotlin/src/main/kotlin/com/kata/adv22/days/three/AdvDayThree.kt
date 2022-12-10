@@ -5,6 +5,20 @@ import java.io.File
 class AdvDayThree {
     private val priorities = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+    fun getGroupsBadgeItemTotalPriorityOfFile(fileName: String): Int {
+        var priority = 0
+        val groupSize = 3
+        val groupRuckSack = mutableSetOf<String>()
+        File(fileName).forEachLine {
+            groupRuckSack.add(it)
+            if (groupRuckSack.size == groupSize) {
+                priority += getGroupBadgeItemPriority(groupRuckSack)
+                groupRuckSack.clear()
+            }
+        }
+        return priority
+    }
+
     fun getTotalPriorityOfFile(fileName: String): Int {
         var priority = 0
         File(fileName).forEachLine { priority += getSharedItemPriority(it) }

@@ -47,4 +47,16 @@ class AdvDayThreeTest {
             assertEquals(expectedPriority, AdvDayThree().getGroupBadgeItemPriority(rucksackContentOfGroup))
         }
     }
+
+    @Test
+    fun should_get_badge_item_priority_70_with_example_file() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/three/inputTest.txt"
+        assertEquals(70, AdvDayThree().getGroupsBadgeItemTotalPriorityOfFile(path))
+    }
+
+    @Test
+    fun should_get_badge_item_priority_2631_with_day_three_input() {
+        val path = "${System.getProperty("user.dir")}/src/test/kotlin/com/kata/adv22/days/three/inputDayThree.txt"
+        assertEquals(2631, AdvDayThree().getGroupsBadgeItemTotalPriorityOfFile(path))
+    }
 }
