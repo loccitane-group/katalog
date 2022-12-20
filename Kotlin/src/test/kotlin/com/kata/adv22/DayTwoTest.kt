@@ -17,7 +17,7 @@ class DayTwoTest : DayBase("peter") {
     @Test
     fun should_return_defeat_for_rock_over_paper() {
         val round = listOf(Pair(Paper,Rock))
-        val expected = 0
+        val expected = 1
         val shifumi = DayTwo(round)
         assertEquals(expected,shifumi.getScore())
     }
@@ -25,7 +25,7 @@ class DayTwoTest : DayBase("peter") {
     @Test
     fun should_return_draw_for_rock_over_rock() {
         val round = listOf(Pair(Rock,Rock))
-        val expected = 3
+        val expected = 4
         val shifumi = DayTwo(round)
         assertEquals(expected,shifumi.getScore())
     }
@@ -50,7 +50,7 @@ class DayTwoTest : DayBase("peter") {
     fun should_convert_XYZ_to_ABC() {
         val input = "A X\n" + "B Y\n" + "C Z\n"
         val lines:List<Pair<Char,Char>> = input.reader().readLines().map { Pair(it[0],it[2]) }
-        val expected = 9
+        val expected = 15
         val shifumi = DayTwo(lines)
         assertEquals(expected,shifumi.getScore())
     }

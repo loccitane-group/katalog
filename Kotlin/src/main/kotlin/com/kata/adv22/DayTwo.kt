@@ -29,10 +29,10 @@ class DayTwo(private val rounds: List<Pair<Char, Char>>) {
     fun getScore(): Int {
         return rounds.map {
             when (it.second) {
-                'X' -> Pair(it.first, Rock) // lose
-                'Y' -> Pair(it.first, Paper)// draw
-                'Z' -> Pair(it.first, Scissors) // win
-                else -> throw Exception("unknown value ${it.second}")
+                'X' -> Pair(it.first, Rock)
+                'Y' -> Pair(it.first, Paper)
+                'Z' -> Pair(it.first, Scissors)
+                else -> it
             }
         }.fold(0) { acc, pair -> acc + scoringMap[pair]!! }
     }
@@ -40,9 +40,9 @@ class DayTwo(private val rounds: List<Pair<Char, Char>>) {
     fun getScore2(): Int {
         return rounds.map {
             when (it.second) {
-                'X' -> Pair(it.first, getLoserFor(it.first)) // lose
-                'Y' -> Pair(it.first, it.first)// draw
-                'Z' -> Pair(it.first, getWinnerFor(it.first)) // win
+                'X' -> Pair(it.first, getLoserFor(it.first))
+                'Y' -> Pair(it.first, it.first)
+                'Z' -> Pair(it.first, getWinnerFor(it.first))
                 else -> throw Exception("unknown value ${it.second}")
             }
         }.fold(0) { acc, pair -> acc + scoringMap[pair]!! }
