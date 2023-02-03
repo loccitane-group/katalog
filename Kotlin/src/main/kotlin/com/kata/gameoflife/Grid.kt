@@ -26,16 +26,7 @@ data class Grid(val length: Int, val height: Int) {
         return gridHasLiveCells()
     }
 
-    private fun gridHasLiveCells(): Boolean {
-        (0 until length).forEach { x ->
-            (0 until height).forEach { y ->
-                when {
-                    cells[x][y] -> return true
-                };
-            }
-        }
-        return false;
-    }
+    private fun gridHasLiveCells() = cells.any { array -> array.any { it } }
 
     fun getNeighbours(x: Int, y: Int): List<Coord> {
         val west = (x - 1 + length) % length
