@@ -1,6 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.7.22"
-    java
+    kotlin("jvm") version "1.8.0"
 }
 
 repositories {
@@ -8,10 +7,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.22")
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.22")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
-    testImplementation("org.assertj:assertj-core:3.23.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.8.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2") { exclude("org.junit.jupiter:junit-jupiter-api.assertions") }
+    testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
