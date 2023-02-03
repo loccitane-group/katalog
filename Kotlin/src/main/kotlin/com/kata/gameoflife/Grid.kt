@@ -4,16 +4,15 @@ data class Grid(val length: Int, val height: Int) {
 
     private val cells = Array(length) { BooleanArray(height) }
 
-    fun isAlive(x: Int, y: Int): Boolean {
-        return cells[x][y]
-    }
+    fun isAlive(x: Int, y: Int): Boolean = cells[x][y]
 
-    fun setAlive(x: Int, y: Int) {
+    fun setAlive(x: Int, y: Int) = apply {
         cells[x][y] = true
     }
 
     fun size(): Int = length * height
-    fun evolve():Boolean {
+
+    fun evolve(): Boolean {
         for (x in 0 until length) {
             for (y in 0 until height) {
                 val neighbours = getNeighbours(x, y)
@@ -27,7 +26,7 @@ data class Grid(val length: Int, val height: Int) {
         return gridHasLiveCells()
     }
 
-    private fun gridHasLiveCells():Boolean {
+    private fun gridHasLiveCells(): Boolean {
         (0 until length).forEach { x ->
             (0 until height).forEach { y ->
                 when {
@@ -51,7 +50,7 @@ data class Grid(val length: Int, val height: Int) {
         )
     }
 
-    fun display(comment:String="") {
+    fun display(comment: String = "") {
         println("display grid: $comment")
         for (y in 0 until height) {
             var line = ""
