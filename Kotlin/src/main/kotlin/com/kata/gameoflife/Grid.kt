@@ -1,6 +1,11 @@
 package com.kata.gameoflife
 
-data class Grid(val length: Int, val height: Int) {
+data class Grid(
+data class Grid(
+    val length: Int,
+    val height: Int,
+    val cellEvolutionRules:CellEvolutionRules  = CellEvolutionRules()
+) {
 
     private val cells = Array(length) { BooleanArray(height) }
 
@@ -17,9 +22,7 @@ data class Grid(val length: Int, val height: Int) {
             for (y in 0 until height) {
                 val neighbours = getNeighbours(x, y)
                 val aliveCount = neighbours.count { cells[it.x][it.y] }
-                val cell = Cell(cells[x][y], aliveCount)
-                cell.evolve()
-                cells[x][y] = cell.isAlive
+                cells[x][y] = cellEvolutionRules.evolve(cells[x][y], aliveCount)
             }
         }
 
@@ -56,5 +59,23 @@ data class Grid(val length: Int, val height: Int) {
         "*"
     } else {
         "-"
+    }
+}
+
+class CellEvolutionRules {
+    fun evolve(isAlive: Boolean = true, liveNeighbourCount: Int):Boolean {
+        // underpopulation
+        if (isAlive && liveNeighbourCount < 2)
+            return  false
+
+        // overcrowding
+        if (isAlive && liveNeighbourCount > 3)
+            return false
+
+        // resurrection
+        if (!isAlive && liveNeighbourCount == 3)
+            return true
+
+        return isAlive
     }
 }
