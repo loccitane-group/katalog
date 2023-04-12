@@ -12,24 +12,24 @@ fun main() {
     var player2 = readln()
 
     // Business Rule 3: Display default board layout & pawns.
-    println(" +---+---+---+---+---+---+---+---+")
-    println("8 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("8 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
     println("7 | B | B | B | B | B | B | B | B |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println("6 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println("5 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println("4 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println("3 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("6 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("5 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("4 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("3 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
     println("2 | W | W | W | W | W | W | W | W |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println("1 | | | | | | | | |")
-    println(" +---+---+---+---+---+---+---+---+")
-    println(" a b c d e f g h")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("1 |   |   |   |   |   |   |   |   |")
+    println("  +---+---+---+---+---+---+---+---+")
+    println("    A   B   C   D   E   F   G   H  ")
 
     // Business Rule 4: Each player moves inputs a move through std input
     // Business Rule 5: A move is invalid if the origin or target is not on the board. When invalid print "Invalid Input"
@@ -40,9 +40,9 @@ fun main() {
 
     while (input != "exit") {
         if (count % 2 == 0) {
-            println("" + player1 + "'s turn:")
+            println("$player1's turn:")
         } else {
-            println("" + player2 + "'s turn:")
+            println("$player2's turn:")
         }
         input = readln()
 
