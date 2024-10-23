@@ -10,4 +10,8 @@ describe('Fraction', () => {
     it('0 + 1 should return 1', () => {
         expect(add(0, 1)).toBe(1);
     })
+
+    it('4 + 5 should return 9', () => {
+        expect(add(4, 5)).toBe(9);
+    })
 });
