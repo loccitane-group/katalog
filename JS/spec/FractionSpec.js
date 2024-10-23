@@ -3,15 +3,16 @@ const add = function (FractionOne, FractionTwo) {
 };
 
 describe('Fraction', () => {
-    it('0 + 0 should return 0', () => {
-        expect(add(0, 0)).toBe(0);
-    })
 
-    it('0 + 1 should return 1', () => {
-        expect(add(0, 1)).toBe(1);
-    })
+const fractionPairs = [
+    { fraction1: 0, fraction2: 0, expectedResult: 0},
+    { fraction1: 0, fraction2: 1, expectedResult: 1},
+    { fraction1: 4, fraction2: 5, expectedResult: 9}
+]
 
-    it('4 + 5 should return 9', () => {
-        expect(add(4, 5)).toBe(9);
+    fractionPairs.forEach(fractionPair => {
+        it(`${fractionPair.fraction1} + ${fractionPair.fraction2} should return ${fractionPair.expectedResult}`, () => {
+            expect(add(fractionPair.fraction1, fractionPair.fraction2)).toBe(fractionPair.expectedResult);
+        })
     })
 });
