@@ -34,12 +34,13 @@ describe("Fraction", () => {
     });
   });
 
-  it("eval(1/2) fractions that should be equal .5", function () {
-    expect(eval("1 / 2")).toBe(1 / 2);
-  });
-
   it("Sum of two 1/2 fractions that should be equal 1/1", function () {
-    expect(add("1 / 2", "1 / 2")).toBe(1 / 1);
+    const frac = new Fraction(1, 2);
+
+    frac.additionService = add;
+
+    // expect(frac.add(frac, add)).toEqual(new Fraction(2, 2));
+    expect(frac.add(frac)).toEqual(new Fraction(2, 2));
   });
 
   it("Sum of two fractions 1/4 and 2/4 that should be equal 3/4", function () {
