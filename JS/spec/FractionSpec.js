@@ -37,10 +37,18 @@ describe("Fraction", () => {
   it("Sum of two 1/2 fractions that should be equal 1/1", function () {
     const frac = new Fraction(1, 2);
 
-    frac.additionService = add;
-
-    // expect(frac.add(frac, add)).toEqual(new Fraction(2, 2));
+    frac.setAdditionService(add);
+    
     expect(frac.add(frac)).toEqual(new Fraction(2, 2));
+  });
+
+  it("Should addition service be used by the Add", function () {
+    const frac = new Fraction(1, 2);
+
+    frac.additionService = spyOn(frac, "getAdditionService");
+    frac.add(frac);
+
+    expect(frac.additionService).toHaveBeenCalled();
   });
 
   it("Sum of two fractions 1/4 and 2/4 that should be equal 3/4", function () {

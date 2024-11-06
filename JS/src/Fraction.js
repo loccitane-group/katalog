@@ -4,7 +4,16 @@ class Fraction {
     this.denominator = denominator;
   }
 
+  setAdditionService(additionService) {
+    this.additionService = additionService;
+  }
+
+  getAdditionService() {
+    return this.additionService;
+  }
+
   add(fraction) {
+    this.getAdditionService();
     return new Fraction(2, 2);
   }
 }
