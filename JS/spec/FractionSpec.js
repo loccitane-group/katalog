@@ -1,3 +1,5 @@
+const Fraction = require("../src/Fraction");
+
 const add = function (FractionOne, FractionTwo) {
   const frac1 = eval(FractionOne);
   const frac2 = eval(FractionTwo);
@@ -23,7 +25,7 @@ describe("Fraction", () => {
   const fractionPairs = [
     { fraction1: "0", fraction2: "0", expectedResult: 0 },
     { fraction1: "0", fraction2: "1", expectedResult: 1 },
-    { fraction1: "4", fraction2: '5', expectedResult: ["4 is not allowed in fraction"] },
+    { fraction1: "4", fraction2: "5", expectedResult: ["4 is not allowed in fraction"] },
   ];
 
   fractionPairs.forEach((fractionPair) => {
@@ -64,5 +66,11 @@ describe("Fraction", () => {
 
   it("the value 4 is forbidden into fraction", function () {
     expect(add("1/4", "1/4")).toContain("4 is not allowed in fraction");
+  });
+
+  it("Fraction should have a numerator and denominator", function () {
+    const frac = new Fraction(0, 1);
+    expect(frac.numerator).toBe(0);
+    expect(frac.denominator).toBe(1);
   });
 });
