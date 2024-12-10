@@ -1,6 +1,6 @@
 const fizzbuz = () => ["1", "2", "Fizz"];
 const isMultipleOfThree = (value) => value % 3 === 0;
-const isMultipleOfFive = (value) => false; 
+const isMultipleOfFive = (value) => value % 5 === 0;
 
 it("The first displayed value should be 1", () => {
   var result = fizzbuz();
@@ -29,4 +29,9 @@ it("3 is multiple of 3", () => {
 it("3 is not multiple of 5", () => {
   var result = isMultipleOfFive(3);
   expect(result).toBe(false);
+});
+
+it("5 is multiple of 5", () => {
+  var result = isMultipleOfFive(5);
+  expect(result).toBe(true);
 });
