@@ -21,3 +21,13 @@ it("5 is multiple of 5", () => {
   var result = isMultipleOfFive(5);
   expect(result).toBe(true);
 });
+const fizzbuzz = (input) => "Fizz"
+it("multiple of 3 should display Fizz", () => {
+    var result = fizzbuzz(3);
+    expect(result).toEqual("Fizz");
+  });
+
+  it("not multiple of 3 and not multiple of 5 should display the value", () => {
+    var result = fizzbuzz(1);
+    expect(result).toEqual("1");
+  });
